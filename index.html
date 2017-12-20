@@ -67,16 +67,25 @@
             background-color: #333;
             position: relative;
             color: white;
+            margin-bottom: 40px;
         }
 
-        #jauge li span{
+        #jauge li span:first-child{
             position: absolute;
             left: 0;
             top: 0;
             height: 100%;
-            width: 75%;
+            width: 0%;
             text-align: right;
             background-color: red;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+        }
+
+        #jauge li span:last-child{
+            position: absolute;
+            top: 110%;
+            background-color: #333;
         }
         
         
@@ -105,8 +114,9 @@
 
     <section id="jauge">
         <ul>
-            <li><span>75%</span></li>
+            <li><span id="skill"></span> <span>0%</span></li>
         </ul>
+        <button id="more">Augmenter</button>
     </section>
 
     <main>
@@ -165,6 +175,47 @@
             scrollPage(scrollTop, first);
 
             
+
+        })
+    </script>
+
+<script>
+        // Attendre le chargement du DOM
+        document.addEventListener('DOMContentLoaded', function(){
+            var skill = document.querySelector('#skill');
+            var more = document.querySelector('#more');
+            var level = 0;
+            
+            more.onclick = function(){
+                
+                switch (level){
+                    case 0 :
+                    skill.style.width = '20%'
+                    level = 20;
+                    break
+
+                    case 20 :
+                    skill.style.width = '40%';
+                    level = 40;
+                    break
+
+                    case 40 :
+                    skill.style.width = '60%';
+                    level = 60;
+                    break
+
+                    case 60 :
+                    skill.style.width = '80%';
+                    level = 80;
+                    break
+
+                    default:
+                    skill.style.width = '100%';
+                    level = 100;
+                    break
+                }
+
+            }
 
         })
     </script>
