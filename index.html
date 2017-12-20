@@ -62,6 +62,22 @@
             padding: 200px 0;
             border: 1px solid red;
         }
+
+        #jauge li{
+            background-color: #333;
+            position: relative;
+            color: white;
+        }
+
+        #jauge li span{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 75%;
+            text-align: right;
+            background-color: red;
+        }
         
         
 
@@ -84,6 +100,13 @@
             <b>Consulter la page</b>
             <span></span>
         </a>
+    </section>
+
+
+    <section id="jauge">
+        <ul>
+            <li><span>75%</span></li>
+        </ul>
     </section>
 
     <main>
