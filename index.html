@@ -14,6 +14,10 @@
         ul {
             padding: 0;
         }
+
+        img{
+            max-width: 100%;
+        }
         
         /* Animated BTN */
             #animatedBtn a{
@@ -119,6 +123,46 @@
         /*  */
         
 
+        /*
+        Texte sur une image en hover
+        */
+            .description{
+                position: relative;
+                height: 240px;
+                width: 240px;
+
+                
+            }
+
+            .description article{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .5);
+                opacity: 0;
+
+                -webkit-transition: all .3s;
+                transition: all .3s;
+            }
+
+            .description article:hover{
+                opacity: 1;
+            }
+
+            #myDescription{
+                width: 500px;
+                margin: auto;
+
+                display: -webkit-flex;
+                display: flex;
+
+                -webkit-justify-content: space-between;
+                justify-content: space-between;
+            }
+        /*  */
+
     </style>
 </head>
 <body>
@@ -140,6 +184,22 @@
             <span></span>
         </a>
     </section>
+
+    <div id="myDescription">
+        <section class="description">
+            <article>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque quod repudiandae tenetur soluta suscipit unde ducimus quibusdam itaque dolorem commodi asperiores numquam eum eius distinctio sit, rerum impedit dolores odio?</p>
+            </article>
+            <img src="./img/meduse.jpg" alt="Image de méduse">
+        </section>
+
+        <section class="description">
+            <article>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque quod repudiandae tenetur soluta suscipit unde ducimus quibusdam itaque dolorem commodi asperiores numquam eum eius distinctio sit, rerum impedit dolores odio?</p>
+            </article>
+            <img src="./img/meduse.jpg" alt="Image de méduse">
+        </section>
+    </div>
 
 
     <section id="jauge">
