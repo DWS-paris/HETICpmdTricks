@@ -57,6 +57,11 @@
         header ul.open{
             height: 60px;
         }
+
+        #first, #second{
+            padding: 200px 0;
+            border: 1px solid red;
+        }
         
         
 
@@ -81,6 +86,22 @@
         </a>
     </section>
 
+    <main>
+        <button id="scrollBtn">ScrollIt</button>
+        <section id="first">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?
+        </section>
+
+        <section id="second">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo officiis hic voluptate consequatur quae laborum, sint molestias natus impedit enim, veritatis iste illo assumenda facere nostrum numquam eum rem voluptates?
+        </section>
+
+        <button id="scrollTop">Scroll top</button>
+
+    </main>
+
+    <script src="./js/smoothscroll.js"></script>
+    
     <script>
         
         // Attendre le chargement du DOM
@@ -99,6 +120,30 @@
             }
         });
 
+    </script>
+
+    <script>
+        // Attendre le chargement du DOM
+        document.addEventListener('DOMContentLoaded', function(){
+
+            var scrollBtn = document.querySelector('#scrollBtn');
+            var scrollTop = document.querySelector('#scrollTop');
+            var second = document.querySelector('#second');
+            var first = document.querySelector('#first');
+
+            function scrollPage(myBtn, mySection){
+                myBtn.onclick = function(){
+                    smoothScroll(mySection);
+                }
+            }
+
+
+            scrollPage(scrollBtn, second);
+            scrollPage(scrollTop, first);
+
+            
+
+        })
     </script>
 </body>
 </html>
