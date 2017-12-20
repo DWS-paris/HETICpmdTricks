@@ -163,9 +163,46 @@
             }
         /*  */
 
+
+        /* 
+        Modal
+        */
+            #lightbox{
+                position: fixed;
+                display: none;
+                background-color: rgba(0, 0, 0, .8);
+                z-index: 1000;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            #lightbox.open{
+                display: initial;
+            }
+
+            #lightbox article {
+                background-color: white;
+                padding: 20px;
+                width: 300px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+        /*  */
     </style>
 </head>
 <body>
+    <button id="openLightBox">Ouvrir</button>
+    <section id="lightbox">
+        <article>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sequi aperiam aliquid vel labore fugiat porro facilis error ratione rerum ad id atque impedit sed, unde minus at neque consequatur!x</p>
+        </article>
+    </section>
 
     <header>
         <h1>Super titre</h1>
@@ -254,6 +291,22 @@
             burgerBtn.onclick = function(){
                 // Ajouter la class open au burgerMenu
                 burgerMenu.classList.toggle('open');
+            }
+        });
+
+    </script>
+
+    <script>
+        
+        // Attendre le chargement du DOM
+        document.addEventListener('DOMContentLoaded', function(){
+
+            var openLightBox = document.querySelector('#openLightBox');
+            var lightbox = document.querySelector('#lightbox');
+
+            openLightBox.onclick = function(){
+                // Ajouter la class open au burgerMenu
+                lightbox.classList.toggle('open');
             }
         });
 
